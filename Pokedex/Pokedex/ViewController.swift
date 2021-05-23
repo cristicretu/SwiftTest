@@ -28,5 +28,13 @@ class ViewController: UITableViewController {
         cell.textLabel?.text = pokemon[indexPath.row].name
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PokemonSegue" {
+            if let destination = segue.destination as? PokemonViewController {
+                destination.pokemon = pokemon[tableView.indexPathForSelectedRow!.row]
+            }
+        }
+    }
 }
 

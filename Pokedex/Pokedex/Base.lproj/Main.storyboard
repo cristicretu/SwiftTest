@@ -33,6 +33,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="3Sg-Mq-WS7" kind="show" identifier="PokemonSegue" id="uXc-Ef-fId"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -46,10 +49,10 @@
             </objects>
             <point key="canvasLocation" x="901.44927536231887" y="35.491071428571423"/>
         </scene>
-        <!--View Controller-->
+        <!--Pokemon View Controller-->
         <scene sceneID="dG2-Js-LpJ">
             <objects>
-                <viewController id="3Sg-Mq-WS7" sceneMemberID="viewController">
+                <viewController id="3Sg-Mq-WS7" customClass="PokemonViewController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zht-fg-pM0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,6 +75,11 @@
                         <viewLayoutGuide key="safeArea" id="oXP-EN-PGH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Muf-YE-aqE"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="8gg-6b-3JM" id="aZu-Ci-NZr"/>
+                        <outlet property="numberLabel" destination="H8B-jh-fSs" id="6dq-7P-fqv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Nh-8r-RCL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
