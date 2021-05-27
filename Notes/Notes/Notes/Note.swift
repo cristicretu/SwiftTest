@@ -10,7 +10,7 @@ import SQLite3
 
 struct Note {
     let id: Int
-    let contents: String
+    var contents: String
 }
 
 class NoteManager {
@@ -18,7 +18,7 @@ class NoteManager {
 
     static let main = NoteManager()
 
-    private init() {
+    private init() { 
     }
 
     func connect() {
@@ -93,4 +93,50 @@ class NoteManager {
         sqlite3_finalize(statement)
         return result
     }
+    
+    func save(note: Note) {
+        connect()
+
+        var statement: OpaquePointer? = nil
+        if sqlite3_prepare_v2(
+            database,
+            "UPDATE notes SET content = ? WHERE rowid = ?",
+            -1,
+            &statement,
+            nil
+        ) == SQLITE_OK {
+            sqlite3_bind_text(statement, 1, NSString(string: note.contents).utf8String, -1, nil)
+            sqlite3_bind_int(statement, 2, Int32(note.id))
+            if sqlite3_step(statement) != SQLITE_DONE {
+                print("Error saving note")
+            }
+        }
+        else {
+            print("Error creating note update statement")
+        }
+
+        sqlite3_finalize(statement)
+    }
+    
+    func delete(id: Int) -> Bool {
+        connect()
+        var statement: OpaquePointer!
+        
+        if sqlite3_prepare_v2(database, "DELETE FROM notes WHERE rowid = ?", -1, &statement, nil) != SQLITE_OK {
+            print("sqlite in not ok dud")
+            return false;
+        }
+        
+        sqlite3_bind_int(statement, 1, Int32(id))
+        
+        if sqlite3_step(statement) != SQLITE_DONE {
+            print("it is not done dud")
+            return false
+        }
+        
+        sqlite3_finalize(statement)
+        return true
+    }
+    
+    
 }

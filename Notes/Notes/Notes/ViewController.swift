@@ -20,6 +20,11 @@ class ViewController: UITableViewController {
         tableView.reloadData()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidLoad()
+        reload()
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -32,6 +37,14 @@ class ViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NoteCell", for: indexPath)
         cell.textLabel?.text = notes[indexPath.row].contents
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "NoteSeque" {
+            if let destination = segue.destination as? NoteViewController {
+                destination.note = notes[tableView.indexPathForSelectedRow!.row]
+            }
+        }
     }
 }
 

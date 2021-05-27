@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -32,6 +33,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Ga2-Fv-Bcf" kind="show" identifier="NoteSeque" id="9Hy-bE-pGj"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -69,10 +73,58 @@
             </objects>
             <point key="canvasLocation" x="-249.27536231884059" y="37.5"/>
         </scene>
+        <!--Note View Controller-->
+        <scene sceneID="jgT-1v-WMX">
+            <objects>
+                <viewController id="Ga2-Fv-Bcf" customClass="NoteViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fur-d1-FID">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aKk-f8-GRH">
+                                <rect key="frame" x="29" y="102" width="365" height="760"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qwm-av-Oyb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aKk-f8-GRH" firstAttribute="bottom" secondItem="qwm-av-Oyb" secondAttribute="bottom" id="Umq-aR-dWP"/>
+                            <constraint firstItem="aKk-f8-GRH" firstAttribute="top" secondItem="qwm-av-Oyb" secondAttribute="top" constant="14" id="UyV-Ip-Xmu"/>
+                            <constraint firstItem="aKk-f8-GRH" firstAttribute="leading" secondItem="qwm-av-Oyb" secondAttribute="leading" constant="87" id="bNM-eS-rDx"/>
+                            <constraint firstItem="qwm-av-Oyb" firstAttribute="trailing" secondItem="aKk-f8-GRH" secondAttribute="trailing" constant="87" id="giQ-QH-fry"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="r2D-d9-ifq">
+                        <barButtonItem key="rightBarButtonItem" title="Delete" landscapeImage="delete.left" catalog="system" id="dNe-uw-JmV">
+                            <color key="tintColor" systemColor="systemPinkColor"/>
+                            <connections>
+                                <action selector="deleteNote:" destination="Ga2-Fv-Bcf" id="fYL-zB-5Ct"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="textView" destination="aKk-f8-GRH" id="J09-Gm-9o9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yh1-v2-ydG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="737.68115942028987" y="-635.49107142857144"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="delete.left" catalog="system" width="128" height="104"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

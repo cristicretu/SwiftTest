@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		166442EE265FADAC0042AD5E /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166442ED265FADAC0042AD5E /* NoteViewController.swift */; };
 		16BE8E62265E36D900BD9EA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BE8E61265E36D900BD9EA3 /* AppDelegate.swift */; };
 		16BE8E64265E36D900BD9EA3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BE8E63265E36D900BD9EA3 /* SceneDelegate.swift */; };
 		16BE8E66265E36D900BD9EA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BE8E65265E36D900BD9EA3 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		166442ED265FADAC0042AD5E /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		16BE8E5E265E36D900BD9EA3 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16BE8E61265E36D900BD9EA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16BE8E63265E36D900BD9EA3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				16BE8E6C265E36DA00BD9EA3 /* LaunchScreen.storyboard */,
 				16BE8E6F265E36DA00BD9EA3 /* Info.plist */,
 				16BE8E75265E37AA00BD9EA3 /* Note.swift */,
+				166442ED265FADAC0042AD5E /* NoteViewController.swift */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 				16BE8E66265E36D900BD9EA3 /* ViewController.swift in Sources */,
 				16BE8E62265E36D900BD9EA3 /* AppDelegate.swift in Sources */,
 				16BE8E64265E36D900BD9EA3 /* SceneDelegate.swift in Sources */,
+				166442EE265FADAC0042AD5E /* NoteViewController.swift in Sources */,
 				16BE8E76265E37AA00BD9EA3 /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
