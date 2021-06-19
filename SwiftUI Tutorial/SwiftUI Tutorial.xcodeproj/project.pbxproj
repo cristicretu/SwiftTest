@@ -11,9 +11,12 @@
 		162A7A16267DF21D00622E8B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162A7A15267DF21D00622E8B /* ContentView.swift */; };
 		162A7A18267DF21E00622E8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 162A7A17267DF21E00622E8B /* Assets.xcassets */; };
 		162A7A1B267DF21E00622E8B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 162A7A1A267DF21E00622E8B /* Preview Assets.xcassets */; };
-		162A7A23267DFDE700622E8B /* 12-Dark.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 162A7A22267DFDE700622E8B /* 12-Dark.jpg */; };
 		162A7A25267DFE0B00622E8B /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162A7A24267DFE0B00622E8B /* CircleImage.swift */; };
 		162A7A27267DFEDD00622E8B /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162A7A26267DFEDD00622E8B /* MapView.swift */; };
+		16B00EB2267E2B9B0068AE59 /* landmarkData.json in Resources */ = {isa = PBXBuildFile; fileRef = 16B00EB1267E2B9B0068AE59 /* landmarkData.json */; };
+		16B00EB4267E30480068AE59 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B00EB3267E30480068AE59 /* Landmark.swift */; };
+		16B00EB6267E347B0068AE59 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B00EB5267E347B0068AE59 /* ModelData.swift */; };
+		16B00EBE267E3AE70068AE59 /* LandmarkRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B00EBD267E3AE70068AE59 /* LandmarkRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,9 +26,13 @@
 		162A7A17267DF21E00622E8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		162A7A1A267DF21E00622E8B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		162A7A1C267DF21E00622E8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		162A7A22267DFDE700622E8B /* 12-Dark.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "12-Dark.jpg"; path = "../../../../Downloads/12-Dark.jpg"; sourceTree = "<group>"; };
 		162A7A24267DFE0B00622E8B /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		162A7A26267DFEDD00622E8B /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		16B00EB1267E2B9B0068AE59 /* landmarkData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = landmarkData.json; path = "SwiftUI Tutorial/Resources/landmarkData.json"; sourceTree = SOURCE_ROOT; };
+		16B00EB3267E30480068AE59 /* Landmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
+		16B00EB5267E347B0068AE59 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		16B00EBB267E39510068AE59 /* 12-Dark.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "12-Dark.jpg"; sourceTree = "<group>"; };
+		16B00EBD267E3AE70068AE59 /* LandmarkRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkRow.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +66,11 @@
 			isa = PBXGroup;
 			children = (
 				162A7A13267DF21D00622E8B /* SwiftUI_TutorialApp.swift */,
-				162A7A15267DF21D00622E8B /* ContentView.swift */,
+				16B00EBC267E39690068AE59 /* Model */,
 				162A7A17267DF21E00622E8B /* Assets.xcassets */,
-				162A7A24267DFE0B00622E8B /* CircleImage.swift */,
-				162A7A26267DFEDD00622E8B /* MapView.swift */,
-				162A7A22267DFDE700622E8B /* 12-Dark.jpg */,
+				16B00EBA267E39460068AE59 /* Resources */,
 				162A7A1C267DF21E00622E8B /* Info.plist */,
+				16B00EB8267E39270068AE59 /* Views */,
 				162A7A19267DF21E00622E8B /* Preview Content */,
 			);
 			path = "SwiftUI Tutorial";
@@ -76,6 +82,35 @@
 				162A7A1A267DF21E00622E8B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		16B00EB8267E39270068AE59 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				16B00EBD267E3AE70068AE59 /* LandmarkRow.swift */,
+				162A7A26267DFEDD00622E8B /* MapView.swift */,
+				162A7A24267DFE0B00622E8B /* CircleImage.swift */,
+				162A7A15267DF21D00622E8B /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		16B00EBA267E39460068AE59 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				16B00EBB267E39510068AE59 /* 12-Dark.jpg */,
+				16B00EB1267E2B9B0068AE59 /* landmarkData.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		16B00EBC267E39690068AE59 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				16B00EB3267E30480068AE59 /* Landmark.swift */,
+				16B00EB5267E347B0068AE59 /* ModelData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +171,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				162A7A1B267DF21E00622E8B /* Preview Assets.xcassets in Resources */,
+				16B00EB2267E2B9B0068AE59 /* landmarkData.json in Resources */,
 				162A7A18267DF21E00622E8B /* Assets.xcassets in Resources */,
-				162A7A23267DFDE700622E8B /* 12-Dark.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +187,9 @@
 				162A7A27267DFEDD00622E8B /* MapView.swift in Sources */,
 				162A7A14267DF21D00622E8B /* SwiftUI_TutorialApp.swift in Sources */,
 				162A7A25267DFE0B00622E8B /* CircleImage.swift in Sources */,
+				16B00EB4267E30480068AE59 /* Landmark.swift in Sources */,
+				16B00EBE267E3AE70068AE59 /* LandmarkRow.swift in Sources */,
+				16B00EB6267E347B0068AE59 /* ModelData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
