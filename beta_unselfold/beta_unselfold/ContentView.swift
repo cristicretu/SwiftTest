@@ -97,7 +97,8 @@ struct ContentView: View {
                     Rectangle()
                         .strokeBorder(Color.gray.opacity(0.6), lineWidth: 1)
                         .background(Rectangle().fill(Color.white))
-                        .frame(width: 150, height: 200)
+                        .frame(width: 150, height: 150)
+                        .offset(x: 0, y: /*@START_MENU_TOKEN@*/10.0/*@END_MENU_TOKEN@*/)
                     
                     RoundedRectangle(cornerRadius: 25)
                         .strokeBorder(Color.gray.opacity(0.6), lineWidth: 1)
