@@ -29,7 +29,7 @@ struct ContentView: View {
                             do {
                                 try self.managedObjectContext.save()
                             } catch {
-                                fatalError("ii bai")
+                                print("Could not save to database")
                             }
                             
                             self.newTaskItem = ""
@@ -52,13 +52,13 @@ struct ContentView: View {
                         do {
                             try self.managedObjectContext.save()
                         } catch {
-                            fatalError("ii bai")
+                            print("Could not delete from database")
                         }
                         
                     }
                 }
             }
-            .navigationBarTitle(Text("Welcome back, Cristi"))
+            .navigationBarTitle(Text("Home"))
             .navigationBarItems(trailing: EditButton())
         }
         
