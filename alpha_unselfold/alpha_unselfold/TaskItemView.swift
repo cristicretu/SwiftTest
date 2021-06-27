@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct TaskItemView: View {
     var name: String = ""
@@ -33,6 +34,14 @@ struct TaskItemView: View {
                     .padding(.bottom, 120.0)
                     .padding(.leading, 90.0)
                     .opacity(0.3)
+                
+                Button(action: {
+                    
+                    
+                }) {
+                    Image(systemName: "xmark.circle.fill")
+                        .foregroundColor(.red)
+                }
                 
                 Button(action: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/{}/*@END_MENU_TOKEN@*/) {
                     RoundedRectangle(cornerRadius: 25)

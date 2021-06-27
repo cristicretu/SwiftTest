@@ -41,21 +41,28 @@ struct ContentView: View {
                         }
                     }
                 }.font(.headline)
-                
-                Section(header: Text("Tasks: ")) {
-                    ForEach(self.TaskItems) { taskitem in
-                        TaskItemView(name: taskitem.name!, date: "\(taskitem.date!)")
-                    }.onDelete {indexset in
-                        let deleteItem = self.TaskItems[indexset.first!]
-                        self.managedObjectContext.delete(deleteItem)
-                        
-                        do {
-                            try self.managedObjectContext.save()
-                        } catch {
-                            print("Could not delete from database")
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 20) {
+                        ForEach(self.TaskItems) { taskitem in
+                            TaskItemView(name: taskitem.name!, date: "\(taskitem.date!)")
                         }
-                        
+                        .onDelete {indexset in
+                            let deleteItem = self.TaskItems[indexset.first!]
+                            self.managedObjectContext.delete(deleteItem)
+                            
+                            do {
+                                try self.managedObjectContext.save()
+                            } catch {
+                                print("Could not delete from database")
+                            }
+                            
+                        }
                     }
+//                Section(header: Text("Tasks: ")) {
+//
+//                    }
+                    
+                    
                 }
             }
             .navigationBarTitle(Text("Home"))
