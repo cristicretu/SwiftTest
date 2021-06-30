@@ -22,7 +22,6 @@ struct ContentView: View {
             
             VStack (alignment: .leading) {
                 
-                // Nav menu
                 Text("Home")
                     .font(.title)
                     .fontWeight(.black)
@@ -33,55 +32,40 @@ struct ContentView: View {
                     .fontWeight(.medium)
                     .padding(.top)
                 
-                card
-                // What's next cards:
-//                content
-//                VisualEffectBlurView(blurStyle: .systemMaterial, vibrancyStyle: .fill) {
-//
-//                }
-                
-                
-//                .padding()
+                cards
             }
             .padding(.leading)
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
             
         }
         
     }
     
-    var card: some View {
+    var cards: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(alignment: .top, spacing: 16) {
                 ForEach(self.TaskItems) { taskitem in
-                    TaskItemView(name: taskitem.name!, date: "\(taskitem.date!)")
-
+                        TaskItemView(name: taskitem.name!, date: "\(taskitem.date!)")
+                }
+                .onDelete {indexset in
+                    let deleteItem = self.TaskItems[indexset.first!]
+                    self.managedObjectContext.delete(deleteItem)
+                    
+                    do {
+                        try self.managedObjectContext.save()
+                    } catch {
+                        print("Could not delete from database")
+                    }
                 }
             }
         }
-        
     }
     
     var background: some View {
-        // The background
         ZStack {
             AngularGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.8470588235, green: 0.337254902, blue: 0.3137254902, alpha: 1)), Color(#colorLiteral(red: 0.8470588235, green: 0.4823529412, blue: 0.9450980392, alpha: 1)), Color(#colorLiteral(red: 0.7411764706, green: 0.9294117647, blue: 0.9254901961, alpha: 1)), Color(#colorLiteral(red: 0.9137254902, green: 0.8784313725, blue: 0.5647058824, alpha: 1)), Color(#colorLiteral(red: 0.8470588235, green: 0.337254902, blue: 0.3137254902, alpha: 1))]), center: .center, angle: .degrees(120))
             
             LinearGradient(gradient: Gradient(colors: [Color.white.opacity(0), Color.white.opacity(1)]), startPoint: .bottom, endPoint: .top)
-        }
-        // Finish Background
-    }
-    
-    var content: some View {
-        ScrollView {
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(alignment: .top, spacing: 16) {
-                    ForEach(self.TaskItems) { taskitem in
-                        TaskItemView(name: taskitem.name!, date: "\(taskitem.date!)")
-                    }
-                }
-            }
-            .padding(.top)
-            
         }
     }
     
