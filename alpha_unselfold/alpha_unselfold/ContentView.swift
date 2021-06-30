@@ -45,7 +45,20 @@ struct ContentView: View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(alignment: .top, spacing: 16) {
                 ForEach(self.TaskItems) { taskitem in
-                        TaskItemView(name: taskitem.name!, date: "\(taskitem.date!)")
+                    TaskItemView(name: taskitem.name!, date: "\(taskitem.date!)")
+                        .contextMenu {
+                            Button {
+                                print("This is going to mark it as completed and then display the checkmark and move it at the end of the hstack")
+                            } label: {
+                                Label("Mark as completed", systemImage: "checkmark")
+                            }
+
+                            Button {
+                                print("This is going to delete it, after a prompt")
+                            } label: {
+                                Label("Remove task", systemImage: "trash")
+                            }
+                        }
                 }
                 .onDelete {indexset in
                     let deleteItem = self.TaskItems[indexset.first!]
@@ -56,7 +69,27 @@ struct ContentView: View {
                     } catch {
                         print("Could not delete from database")
                     }
+                    
                 }
+
+                
+//                ForEach(self.TaskItems) { taskitem in
+//                    ZStack {
+//
+//                        TaskItemView(name: taskitem.name!, date: "\(taskitem.date!)")
+//                        Button(action: {
+//                            print("aaaaa kkk")
+//                        }) {
+//                               RoundedRectangle(cornerRadius: 25)
+//                                   .strokeBorder(Color.gray.opacity(0.6), lineWidth: 1)
+//                                   .background(RoundedRectangle(cornerRadius: 25).fill(Color.white).shadow(color: Color.black.opacity(0.1), radius: 5.0))
+//                                   .frame(width: 20, height: 20)
+//                                   .offset(x:0, y:55)
+//                           }
+//
+//                    }
+//                }
+                
             }
         }
     }

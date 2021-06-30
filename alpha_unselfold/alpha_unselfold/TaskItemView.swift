@@ -19,9 +19,9 @@ struct TaskItemView: View {
             Text("\(date)")
 //          Text("\()")
         })
-        .frame(width: 150, height: 150)
-        .mask(RoundedRectangle(cornerRadius: 25, style: .continuous))
-        .overlay(RoundedRectangle(cornerRadius: 25, style: .continuous).stroke(lineWidth: 0.5).fill(Color.white))
+        .frame(width: 150, height: 150).contentShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
+        .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: 30, style: .continuous).stroke(lineWidth: 0.5).fill(Color.white))
         
     }
 }
