@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16168623268F050E004D0352 /* CardsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16168622268F050E004D0352 /* CardsList.swift */; };
 		1656A94526877CF50013CD59 /* alpha_unselfoldApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1656A94426877CF50013CD59 /* alpha_unselfoldApp.swift */; };
 		1656A94726877CF50013CD59 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1656A94626877CF50013CD59 /* ContentView.swift */; };
 		1656A94926877CF50013CD59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1656A94826877CF50013CD59 /* Assets.xcassets */; };
@@ -16,10 +17,10 @@
 		16579AC526877F5C005D4432 /* TaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16579AC426877F5C005D4432 /* TaskItem.swift */; };
 		16BFD1532687856300854C15 /* TaskItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BFD1522687856300854C15 /* TaskItemView.swift */; };
 		16F8B3E8268C9047004C431B /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = 16F8B3E7268C9047004C431B /* SwiftUIX */; };
-		16F98921268C9421002861CE /* Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F98920268C9421002861CE /* Blur.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		16168622268F050E004D0352 /* CardsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsList.swift; sourceTree = "<group>"; };
 		1656A94126877CF50013CD59 /* alpha_unselfold.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = alpha_unselfold.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1656A94426877CF50013CD59 /* alpha_unselfoldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alpha_unselfoldApp.swift; sourceTree = "<group>"; };
 		1656A94626877CF50013CD59 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -30,7 +31,6 @@
 		1656A95226877CF50013CD59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16579AC426877F5C005D4432 /* TaskItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItem.swift; sourceTree = "<group>"; };
 		16BFD1522687856300854C15 /* TaskItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItemView.swift; sourceTree = "<group>"; };
-		16F98920268C9421002861CE /* Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blur.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,9 +65,9 @@
 			isa = PBXGroup;
 			children = (
 				16BFD1522687856300854C15 /* TaskItemView.swift */,
-				16F98920268C9421002861CE /* Blur.swift */,
 				1656A94426877CF50013CD59 /* alpha_unselfoldApp.swift */,
 				1656A94626877CF50013CD59 /* ContentView.swift */,
+				16168622268F050E004D0352 /* CardsList.swift */,
 				1656A94826877CF50013CD59 /* Assets.xcassets */,
 				1656A94D26877CF50013CD59 /* Persistence.swift */,
 				1656A95226877CF50013CD59 /* Info.plist */,
@@ -165,7 +165,7 @@
 				1656A94E26877CF50013CD59 /* Persistence.swift in Sources */,
 				16579AC526877F5C005D4432 /* TaskItem.swift in Sources */,
 				1656A95126877CF50013CD59 /* alpha_unselfold.xcdatamodeld in Sources */,
-				16F98921268C9421002861CE /* Blur.swift in Sources */,
+				16168623268F050E004D0352 /* CardsList.swift in Sources */,
 				1656A94726877CF50013CD59 /* ContentView.swift in Sources */,
 				1656A94526877CF50013CD59 /* alpha_unselfoldApp.swift in Sources */,
 			);

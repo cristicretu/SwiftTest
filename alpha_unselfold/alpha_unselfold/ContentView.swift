@@ -24,74 +24,78 @@ struct ContentView: View {
                 
                 Text("Home")
                     .font(.title)
-                    .fontWeight(.black)
+                    .fontWeight(.bold)
                     .padding(.top)
                 
-                Text("What's next for you: ")
-                    .font(.title3)
-                    .fontWeight(.medium)
-                    .padding(.top)
+                HStack {
+                    Text("What's next for you: ")
+                        .font(.title3)
+                        .fontWeight(.medium)
+                        .padding(.top)
+                    Spacer()
+                    
+                    Menu {
+                        
+                    }
+                    label: {
+                        VisualEffectBlurView(blurStyle: .systemThinMaterial, vibrancyStyle: .fill, content: {
+                            HStack {
+                                Text("New")
+                                Spacer()
+                                Image(systemName: "plus.circle.fill")
+                                   .foregroundColor(.green)
+                            }
+                            .padding()
+                        })
+                        .frame(width: 100, height: 30).contentShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
+                        .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
+                        .overlay(RoundedRectangle(cornerRadius: 30, style: .continuous).stroke(lineWidth: 0.75).fill(Color.white))
+                        .padding(.top)
+                        .padding(.trailing)
+                    }
+                    
+//                    Button(action: {
+//                        Menu {
+//                            Button
+//                        }
+////                        let TaskItem = TaskItem(context: self.managedObjectContext)
+////                        TaskItem.name = self.newTaskItem
+////                        TaskItem.date = Date()
+////
+////                        do {
+////                            try self.managedObjectContext.save()
+////                        } catch {
+////                            print("Could not save to database")
+////                        }
+////
+////                        self.newTaskItem = ""
+//
+//                    }) {
+//                        VisualEffectBlurView(blurStyle: .systemThinMaterial, vibrancyStyle: .fill, content: {
+//                            HStack {
+//                                Text("New")
+//                                Spacer()
+//                                Image(systemName: "plus.circle.fill")
+//                                   .foregroundColor(.green)
+//                            }
+//                            .padding()
+//                        })
+//                        .frame(width: 100, height: 30).contentShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
+//                        .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
+//                        .overlay(RoundedRectangle(cornerRadius: 30, style: .continuous).stroke(lineWidth: 0.75).fill(Color.white))
+//                        .padding(.top)
+//                        .padding(.trailing)
+//                    }
+                    
+                    }
                 
-                cards
+                CardsList()
             }
             .padding(.leading)
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
             
         }
         
-    }
-    
-    var cards: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(alignment: .top, spacing: 16) {
-                ForEach(self.TaskItems) { taskitem in
-                    TaskItemView(name: taskitem.name!, date: "\(taskitem.date!)")
-                        .contextMenu {
-                            Button {
-                                print("This is going to mark it as completed and then display the checkmark and move it at the end of the hstack")
-                            } label: {
-                                Label("Mark as completed", systemImage: "checkmark")
-                            }
-
-                            Button {
-                                print("This is going to delete it, after a prompt")
-                            } label: {
-                                Label("Remove task", systemImage: "trash")
-                            }
-                        }
-                }
-                .onDelete {indexset in
-                    let deleteItem = self.TaskItems[indexset.first!]
-                    self.managedObjectContext.delete(deleteItem)
-                    
-                    do {
-                        try self.managedObjectContext.save()
-                    } catch {
-                        print("Could not delete from database")
-                    }
-                    
-                }
-
-                
-//                ForEach(self.TaskItems) { taskitem in
-//                    ZStack {
-//
-//                        TaskItemView(name: taskitem.name!, date: "\(taskitem.date!)")
-//                        Button(action: {
-//                            print("aaaaa kkk")
-//                        }) {
-//                               RoundedRectangle(cornerRadius: 25)
-//                                   .strokeBorder(Color.gray.opacity(0.6), lineWidth: 1)
-//                                   .background(RoundedRectangle(cornerRadius: 25).fill(Color.white).shadow(color: Color.black.opacity(0.1), radius: 5.0))
-//                                   .frame(width: 20, height: 20)
-//                                   .offset(x:0, y:55)
-//                           }
-//
-//                    }
-//                }
-                
-            }
-        }
     }
     
     var background: some View {
