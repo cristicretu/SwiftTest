@@ -11,6 +11,8 @@ import CoreData
 public class TaskItem: NSManagedObject, Identifiable {
     @NSManaged public var date: Date?
     @NSManaged public var name: String?
+    
+    @NSManaged public var isNewData: Bool?
 //    @NSManaged public var points: Int?
 }
 

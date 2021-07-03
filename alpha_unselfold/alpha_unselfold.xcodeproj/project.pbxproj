@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		160F6C542690CA80001D5AD6 /* NewTaskGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160F6C532690CA80001D5AD6 /* NewTaskGroup.swift */; };
 		16168623268F050E004D0352 /* CardsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16168622268F050E004D0352 /* CardsList.swift */; };
 		1656A94526877CF50013CD59 /* alpha_unselfoldApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1656A94426877CF50013CD59 /* alpha_unselfoldApp.swift */; };
 		1656A94726877CF50013CD59 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1656A94626877CF50013CD59 /* ContentView.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		160F6C532690CA80001D5AD6 /* NewTaskGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskGroup.swift; sourceTree = "<group>"; };
 		16168622268F050E004D0352 /* CardsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsList.swift; sourceTree = "<group>"; };
 		1656A94126877CF50013CD59 /* alpha_unselfold.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = alpha_unselfold.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1656A94426877CF50013CD59 /* alpha_unselfoldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alpha_unselfoldApp.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				16BFD1522687856300854C15 /* TaskItemView.swift */,
 				1656A94426877CF50013CD59 /* alpha_unselfoldApp.swift */,
 				1656A94626877CF50013CD59 /* ContentView.swift */,
+				160F6C532690CA80001D5AD6 /* NewTaskGroup.swift */,
 				16168622268F050E004D0352 /* CardsList.swift */,
 				1656A94826877CF50013CD59 /* Assets.xcassets */,
 				1656A94D26877CF50013CD59 /* Persistence.swift */,
@@ -168,6 +171,7 @@
 				16168623268F050E004D0352 /* CardsList.swift in Sources */,
 				1656A94726877CF50013CD59 /* ContentView.swift in Sources */,
 				1656A94526877CF50013CD59 /* alpha_unselfoldApp.swift in Sources */,
+				160F6C542690CA80001D5AD6 /* NewTaskGroup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

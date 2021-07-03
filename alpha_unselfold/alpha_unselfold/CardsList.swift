@@ -26,7 +26,12 @@ struct CardsList: View {
                             }
 
                             Button {
-                                print("This is going to delete it, after a prompt")
+                                self.managedObjectContext.delete(taskitem)
+                                do {
+                                    try self.managedObjectContext.save()
+                                } catch {
+                                    print("Could not delete from database")
+                                }
                             } label: {
                                 Label("Remove task", systemImage: "trash")
                             }
